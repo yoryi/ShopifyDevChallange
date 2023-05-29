@@ -1,0 +1,5 @@
+*.liquid
+
+# generated files
+theme/assets/*.*.js
+theme/assets/*.min.*

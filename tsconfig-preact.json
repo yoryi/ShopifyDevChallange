@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "esbuild": {
+    "entryPoints": ["./tabs.tsx"],
+    "bundle": true,
+    "outFile": "../theme/assets/tabs.js",
+    "platform": "browser",
+    "target": "es2015",
+    "format": "esm",
+    "loader": {
+      ".js": "jsx"
+    },
+    "sourcemap": true,
+    "minify": true
+  },
+  "include": [
+    "./tabs-tsx/*.tsx"
+  ]
+}

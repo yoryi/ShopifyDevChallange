@@ -1,0 +1,14 @@
+<div class="tabs-container">
+  {% if section.settings.show_tabs %}
+    <ul class="tabs tw-list-none tw-flex tw-px-0 tw-py-1 tw-mx-2 tw-my-10 tw-border-0 tw-border-b tw-border-b-black tw-border-opacity-20 tw-border-solid tw-cursor-pointer">
+      {%- for block in section.blocks -%}
+      <li style="font-size: {{ section.settings.tab_font_size }}px; color: {{ section.settings.tab_text_color }}" class="tab2 tw-text-center tw-w-[100px]">{{ block.settings.tab_title }}</li>
+      {%- endfor -%}
+    </ul>
+    <div class="tab-content tw-pl-10">
+      {%- for block in section.blocks -%}
+        <div class="content2 hidden">Content for {{ block.settings.tab_title }}</div>
+      {%- endfor -%}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,58 @@
+{% schema %}
+{
+  "name": "Tabs",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_tabs",
+      "label": "Show Tabs",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "tab_font_size",
+      "label": "Font size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "t:sections.tabs-complex.blocks.column.name",
+      "settings": [
+        {
+          "id": "tab_title",
+          "type": "text",
+          "label": "Tab"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.tabs-complex.presets.name",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% assign blocksettings = section.blocks | map: 'settings' %}
+
+<div id="tab-render-area" data-section="{{ section.settings | json | escape }}" data-blocks="{{ blocksettings | json | escape }}"></div>
